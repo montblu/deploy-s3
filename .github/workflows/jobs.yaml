@@ -2,10 +2,10 @@ name: S3 Deploy
 on: [push]
 jobs:
  build-deploy-stage:
-    uses: montblu/deploy-s3/.github/workflows/reuseworkflow.yml@ac0b7ef08e99217ca39ba3063e1d2e1d51d3823a
+    uses: ./.github/workflows/reuseworkflow.yml
     with:
       environment: stage
  build-deploy-prod:
-    uses: montblu/deploy-s3/.github/workflows/reuseworkflow.yaml@ac0b7ef08e99217ca39ba3063e1d2e1d51d3823a
+    uses: ./.github/workflows/reuseworkflow.yml
     with:
       environment: prod
