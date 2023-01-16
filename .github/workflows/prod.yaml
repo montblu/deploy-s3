@@ -4,8 +4,8 @@ on:
   branches:
       - prod
 
+jobs:
  build-deploy-prod:
     uses: ./.github/workflows/reuseworkflow.yml
     with:
      environment: prod
-
