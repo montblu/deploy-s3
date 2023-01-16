@@ -22,11 +22,11 @@ jobs:
             invalidation: / *
             
    build-and-deploy-stage:
-    environment: stage
-    <<: *build-and-deploy
+     environment: stage
+     <<: *build-and-deploy
    build-and-deploy-prod:
-    environment: prod
-    <<: *build-and-deploy
+     environment: prod
+     <<: *build-and-deploy
 
 
 
