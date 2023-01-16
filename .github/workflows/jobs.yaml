@@ -1,0 +1,11 @@
+name: Example workflow for S3 Deploy
+on: [push]
+jobs:
+ build-deploy-stage:
+    uses: montblu/deploy-s3/.github/workflows/main.yaml
+    with:
+      environment: stage
+ build-deploy-prod:
+    uses: montblu/deploy-s3/.github/workflows/main.yaml
+    with:
+      environment: prod
