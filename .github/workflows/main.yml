@@ -8,7 +8,7 @@ jobs:
         - uses: actions/checkout@v1
 
         - name: Check Variables
-          run: echo "${{ secrets.S3_BUCKET }}"
+          run: echo "${{ vars.S3_BUCKET }}"
 
         - name: Build
           run: yarn build
