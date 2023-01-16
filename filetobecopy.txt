@@ -1,0 +1,1 @@
+If this file is copied to the s3 you are good
