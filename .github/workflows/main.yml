@@ -1,8 +1,13 @@
-name: Example workflow for S3 Deploy
-on: [push]
+name: Reusable workflow 
+on: 
+  workflow_call:
+     inputs:
+      config-path:
+        required: true
+        type: string
+        
 jobs:
-   build-and-deploy-stage: 
-    environment: stage
+   build-and-deploy: 
     runs-on: ubuntu-latest
     
     steps:
@@ -12,18 +17,7 @@ jobs:
           run: echo "${{ vars.S3_BUCKET }}"
 
  
-            
-   build-and-deploy-prod: 
-    environment: prod
-    runs-on: ubuntu-latest
-    
-    steps:
-        - uses: actions/checkout@v1
 
-        - name: Check Variables
-          run: echo "${{ vars.S3_BUCKET }}"
-
-            
 
 
 
