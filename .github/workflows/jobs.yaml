@@ -2,10 +2,10 @@ name: S3 Deploy
 on: [push]
 jobs:
  build-deploy-stage:
-    uses: montblu/deploy-s3/.github/workflows/main.yaml@latest
+    uses: montblu/deploy-s3/.github/workflows/main.yaml@main
     with:
       environment: stage
  build-deploy-prod:
-    uses: montblu/deploy-s3/.github/workflows/main.yaml@latest
+    uses: montblu/deploy-s3/.github/workflows/main.yaml@main
     with:
       environment: prod
