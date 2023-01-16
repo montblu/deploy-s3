@@ -1,9 +1,9 @@
 name: Example workflow for S3 Deploy
 on: [push]
 jobs:
-  run:
+   build-and-deploy: &build-and-deploy
     runs-on: ubuntu-latest
-    environment: stage
+    
     steps:
         - uses: actions/checkout@v1
 
@@ -20,4 +20,13 @@ jobs:
             bucket: ${{ vars.S3_BUCKET }}
             dist-id: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}
             invalidation: / *
+            
+   build-and-deploy-stage:
+    environment: stage
+    <<: *build-and-deploy
+   build-and-deploy-prod:
+    environment: prod
+    <<: *build-and-deploy
+
+
 
