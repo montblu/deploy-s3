@@ -11,16 +11,7 @@ jobs:
         - name: Check Variables
           run: echo "${{ vars.S3_BUCKET }}"
 
-        - name: Build
-          run: yarn build
-
-        - name: Deploy
-          uses: lbertenasco/s3-deploy@v1
-          with:
-            folder: build
-            bucket: ${{ vars.S3_BUCKET }}
-            dist-id: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}
-            invalidation: / *
+ 
             
    build-and-deploy-prod: 
     environment: prod
@@ -32,16 +23,6 @@ jobs:
         - name: Check Variables
           run: echo "${{ vars.S3_BUCKET }}"
 
-        - name: Build
-          run: yarn build
-
-        - name: Deploy
-          uses: lbertenasco/s3-deploy@v1
-          with:
-            folder: build
-            bucket: ${{ vars.S3_BUCKET }}
-            dist-id: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}
-            invalidation: / *
             
 
 
