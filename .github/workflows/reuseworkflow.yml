@@ -1,0 +1,17 @@
+name: Reusable workflow 
+on: 
+  workflow_call:
+     inputs:
+      environment: 
+        required: true
+        type: string
+        
+jobs:
+   build-and-deploy: 
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.environment }}
+    steps:
+        - uses: actions/checkout@v1
+
+        - name: Check Variables
+          run: echo "${{ vars.S3_BUCKET }}"

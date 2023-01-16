@@ -1,0 +1,13 @@
+name: S3 Deploy - Stage
+on: 
+ push:
+  branches:
+      - main
+
+jobs:
+ build-deploy-stage:
+    uses: ./.github/workflows/reuseworkflow.yml
+    with:
+     environment: stage
+
+

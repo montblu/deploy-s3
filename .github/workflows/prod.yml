@@ -1,0 +1,11 @@
+name: S3 Deploy - Prod
+on: 
+ push:
+  branches:
+      - prod
+
+jobs:
+ build-deploy-prod:
+    uses: ./.github/workflows/reuseworkflow.yml
+    with:
+     environment: prod
