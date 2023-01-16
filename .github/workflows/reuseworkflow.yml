@@ -2,8 +2,8 @@ name: Reusable workflow
 on: 
   workflow_call:
      inputs:
-      config-path:
-        required: false
+      environment:
+        required: true
         type: string
         
 jobs:
